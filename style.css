@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial, sans-serif;
+  color: #35483c;
+  background: #faf9f4;
+  line-height: 1.6;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 8%;
+  background: #fff;
+}
+
+.logo { font-size: 24px; font-weight: bold; color: #526e59; }
+.nav-links { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; }
+nav a { text-decoration: none; color: #405346; }
+
+.btn {
+  background: #657e68;
+  color: white !important;
+  padding: 12px 23px;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+.btn:hover { background: #405b46; }
+.btn-light { background: white; color: #526e59 !important; margin-left: 8px; }
+
+.hero {
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  padding: 70px 9%;
+  background:
+    linear-gradient(90deg, rgba(31,48,37,.72), rgba(31,48,37,.08)),
+    url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1600') center/cover;
+  color: white;
+}
+.hero-content { max-width: 560px; }
+.hero h1 { font-size: clamp(2.5rem, 5vw, 3.45rem); line-height: 1.15; margin-bottom: 20px; }
+.hero p { font-size: 18px; margin-bottom: 28px; }
+
+section { padding: 75px 9%; }
+.heading { text-align: center; margin-bottom: 40px; }
+.heading h2, .about h2 { font-size: 34px; color: #526e59; margin-bottom: 10px; }
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+.about p { margin-bottom: 18px; }
+.about img { width: 100%; height: 340px; object-fit: cover; border-radius: 15px; }
+
+.sessions, .recommended {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+.card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,.06);
+  text-align: center;
+  padding-bottom: 25px;
+}
+.card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+.card h3 { margin: 18px 12px 8px; color: #526e59; }
+.card p { padding: 0 18px; margin-bottom: 18px; }
+.soft-section { background: #edf1e9; }
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 330px));
+  justify-content: center;
+  gap: 25px;
+}
+.plan { padding: 35px 25px; }
+.plan .price { font-size: 36px; font-weight: bold; color: #526e59; margin: 15px 0; }
+.plan .price small { font-size: 15px; }
+.plan ul { list-style: none; margin: 20px 0; }
+.plan li { padding: 7px; }
+.popular { border: 2px solid #82977e; }
+.plan-note { text-align: center; margin-top: 25px; }
+
+footer {
+  background: #435b49;
+  color: white;
+  text-align: center;
+  padding: 35px 15px;
+}
+.footer-links { margin: 18px 0; }
+footer a { color: white; margin: 0 10px; }
+.copyright { margin-top: 20px; }
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal.is-open { display: flex; }
+.modal-box {
+  background: white;
+  padding: 35px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+.modal-box input {
+  width: 100%;
+  padding: 13px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  font: inherit;
+}
+.modal-box form .btn { margin-top: 8px; }
+.close {
+  float: right;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: 26px;
+  color: #405346;
+}
+.demo-note, .form-message { margin-top: 15px; font-size: 13px; }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 750px) {
+  nav { flex-wrap: wrap; }
+  .nav-links { gap: 12px; }
+  .about, .sessions, .plans, .recommended { grid-template-columns: 1fr; }
+  .hero { min-height: 480px; }
+  section { padding: 55px 7%; }
+}
